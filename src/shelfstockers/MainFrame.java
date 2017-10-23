@@ -40,7 +40,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         DesktopPane.setBounds(new java.awt.Rectangle(0, 0, 650, 500));
 
-        BillingMenu.setIcon(new javax.swing.ImageIcon("/Users/siddharthachoudhary/Desktop/Webp.net-resizeimage.png")); // NOI18N
+        BillingMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shelfstockers/Webp.net-resizeimage.png"))); // NOI18N
         BillingMenu.setText("Billing");
 
         NewBillingMenu.setText("New Billing");
@@ -53,7 +53,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(BillingMenu);
 
-        StockMenu.setIcon(new javax.swing.ImageIcon("/Users/siddharthachoudhary/Desktop/data-management-icon.png")); // NOI18N
+        StockMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shelfstockers/data-management-icon.png"))); // NOI18N
         StockMenu.setText("Stock");
 
         DisplayMenu.setText("Display Stock");

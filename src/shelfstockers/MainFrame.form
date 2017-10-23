@@ -7,7 +7,7 @@
         <Menu class="javax.swing.JMenu" name="BillingMenu">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/siddharthachoudhary/Desktop/Webp.net-resizeimage.png"/>
+              <Image iconType="3" name="/shelfstockers/Webp.net-resizeimage.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Billing"/>
           </Properties>
@@ -25,7 +25,7 @@
         <Menu class="javax.swing.JMenu" name="StockMenu">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/siddharthachoudhary/Desktop/data-management-icon.png"/>
+              <Image iconType="3" name="/shelfstockers/data-management-icon.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Stock"/>
           </Properties>

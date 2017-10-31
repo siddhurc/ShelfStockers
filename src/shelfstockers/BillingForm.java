@@ -73,6 +73,7 @@ public class BillingForm extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         TextMessage = new javax.swing.JTextArea();
+        doneButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 204));
         setClosable(true);
@@ -138,14 +139,14 @@ public class BillingForm extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "NAME", "QUANTITY", "PRICE", "AMOUNT"
+                "S.no", "ID", "NAME", "QUANTITY", "PRICE", "AMOUNT"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -159,6 +160,12 @@ public class BillingForm extends javax.swing.JInternalFrame {
         MainTable.setColumnSelectionAllowed(true);
         jScrollPane2.setViewportView(MainTable);
         MainTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (MainTable.getColumnModel().getColumnCount() > 0) {
+            MainTable.getColumnModel().getColumn(0).setResizable(false);
+            MainTable.getColumnModel().getColumn(1).setResizable(false);
+            MainTable.getColumnModel().getColumn(2).setResizable(false);
+            MainTable.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         jLabel6.setText("Total Amount:");
 
@@ -175,6 +182,13 @@ public class BillingForm extends javax.swing.JInternalFrame {
         TextMessage.setTabSize(10);
         TextMessage.setAutoscrolls(false);
         jScrollPane3.setViewportView(TextMessage);
+
+        doneButton.setText("Done");
+        doneButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doneButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -223,7 +237,8 @@ public class BillingForm extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel6)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(TextTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(doneButton))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -252,13 +267,14 @@ public class BillingForm extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TextTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(doneButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -345,6 +361,14 @@ public class BillingForm extends javax.swing.JInternalFrame {
    TextId.setText(""+id);
     }//GEN-LAST:event_TextQtyFocusLost
 
+    private void doneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneButtonActionPerformed
+        // TODO add your handling code here:
+        int ro=MainTable.getSelectedRow();
+        int col=MainTable.getSelectedColumn();
+        
+        
+    }//GEN-LAST:event_doneButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable MainTable;
@@ -356,6 +380,7 @@ public class BillingForm extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TextPrice;
     private javax.swing.JTextField TextQty;
     private javax.swing.JTextField TextTotal;
+    private javax.swing.JButton doneButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
